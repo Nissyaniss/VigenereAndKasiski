@@ -1,9 +1,10 @@
 pub const ASCIITABLE: &str = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ";
 pub const ASCIILIMIT: i32 = ASCIITABLE.len() as i32;
+pub const SPACEASINT: u32 = 94;
 
 pub fn is_char_in_ascii_table(char: char) -> bool {
 	for i in 0..ASCIILIMIT as usize {
-		if ASCIITABLE.chars().nth(i).unwrap() == char {
+		if ASCIITABLE.chars().nth(i).unwrap() == char || char == ' ' {
 			return true;
 		}
 	}

@@ -14,11 +14,11 @@ struct Args {
 
 #[derive(Debug, Subcommand)]
 enum Command {
-	EncryptViginere {
+	EncryptVigenere {
 		text: String,
 		key: String,
 	},
-	DecryptViginere {
+	DecryptVigenere {
 		text: String,
 		key: String,
 	},
@@ -31,12 +31,12 @@ fn main() {
 	let args = Args::parse();
 	let now = Instant::now();
 	match args.command {
-		Command::EncryptViginere { text, key } => {
+		Command::EncryptVigenere { text, key } => {
 			let encrypted = viginere::encrypt(text, key.clone());
 			println!("Your encrypted string using the key {key} is : {encrypted}");
 		}
 
-		Command::DecryptViginere { text, key } => {
+		Command::DecryptVigenere { text, key } => {
 			let decrypted = viginere::decrypt(text, key.clone());
 			println!("Your decrypted string using the key {key} is : {decrypted}");
 		}
