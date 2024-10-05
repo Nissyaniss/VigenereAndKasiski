@@ -44,7 +44,6 @@ pub fn decrypt(text: String, key: String) -> String {
 		let key_current_char_as_int =
 			get_value_ascii_table(key.chars().nth(i % key.len()).unwrap());
 
-		println!("{text_current_char_as_int}");
 		if text_current_char_as_int == SPACEASINT {
 			result.push(' ');
 		} else {
